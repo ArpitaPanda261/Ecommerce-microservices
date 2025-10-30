@@ -1,0 +1,13 @@
+{
+  "name": "ecommerce-microservices",
+  "private": true,
+  "scripts": {
+    "start:frontend": "cd frontend && npm run dev",
+    "start:product-order": "cd product-order-service && pnpm start dev",
+    "start:customer": "cd customer-service && npx ts-node -r tsconfig-paths/register src/main.ts",
+    "start:all": "concurrently \"npm run start:frontend\" \"npm run start:product-order\" \"npm run start:customer\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
